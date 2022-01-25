@@ -1,33 +1,33 @@
-function multipliedValues() {
-    const first = getElementNumberValue("first")
-        // console.log(first)
-    const second = getElementNumberValue("second")
-        // console.log(second)
-    const multipliedValues = first * second
-    writeResult(multipliedValues)
-}
+// function multipliedValues() {
+//     const first = getElementNumberValue("first")
+//         // console.log(first)
+//     const second = getElementNumberValue("second")
+//         // console.log(second)
+//     const multipliedValues = first * second
+//     writeResult(multipliedValues)
+// }
 
-function dividedValues() {
-    const first = getElementNumberValue("first")
-        // console.log(first)
-    const second = getElementNumberValue("second")
-
-
-    const dividedValues = first / second
-    writeResult(dividedValues)
-        // console.log(dividedValues)
-}
+// function dividedValues() {
+//     const first = getElementNumberValue("first")
+//         // console.log(first)
+//     const second = getElementNumberValue("second")
 
 
+//     const dividedValues = first / second
+//     writeResult(dividedValues)
+//         // console.log(dividedValues)
+// }
 
-function SumValues() {
-    const first = getElementNumberValue("first")
-        // console.log(first)
-    const second = getElementNumberValue("second")
-        // console.log(second)
-    const SumValues = first + second
-    writeResult(SumValues)
-}
+
+
+// function SumValues() {
+//     const first = getElementNumberValue("first")
+//         // console.log(first)
+//     const second = getElementNumberValue("second")
+//         // console.log(second)
+//     const SumValues = first + second
+//     writeResult(SumValues)
+// }
 
 function SubstractValues() {
     const first = getElementNumberValue("first")
@@ -40,22 +40,27 @@ function SubstractValues() {
 
 function getElementNumberValue(id) {
     const firstElement = document.getElementById(id)
+
     const value = Number(firstElement.value)
         // const valueAsNumber = Number(value)
         // console.log(typeof valueAsNumber)
         // console.log(typeof value)
     return value
-
 }
 
-function writeResult(result) {
-    // if (result == "Infinty") { // console.log(result)
-    //     const resultParagraph = document.getElementById("result")
-    //     resultParagraph.innerHTML = "result is: " + "dalyba is nulio negalima"
-    // } else {
-    const resultParagraph = document.getElementById("result")
-    resultParagraph.innerHTML = "result is: " + result
-}
+const atsakymas = getElementNumberValue("first")
+console.log(atsakymas)
+
+
+
+// function writeResult(result) {
+// if (result == "Infinty") { // console.log(result)
+//     const resultParagraph = document.getElementById("result")
+//     resultParagraph.innerHTML = "result is: " + "dalyba is nulio negalima"
+// } else {
+// const resultParagraph = document.getElementById("result")
+// resultParagraph.innerHTML = "result is: " + result
+// }
 // }
 
 
