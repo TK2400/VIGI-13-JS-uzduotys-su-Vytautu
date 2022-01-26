@@ -6,6 +6,8 @@ function getElementValue(id) {
     return value
 }
 
+
+
 function convert() {
     const celsius = getElementValue("first")
     const fahrenheit = getElementValue("second")
@@ -25,9 +27,9 @@ function calculatedResult(result) {
     const fahrenheit = getElementValue("second")
     const resultParagraph = document.getElementById("result")
     if (fahrenheit === 0) {
-        resultParagraph.innerHTML = "Atsakymas: " + result.toFixed(2) + " " + "F°"
+        resultParagraph.innerHTML = "Atsakymas: " + result.toFixed(2) + " F°"
     } else if (celsius === 0) {
-        resultParagraph.innerHTML = "Atsakymas: " + result.toFixed(2) + " " + "C°"
+        resultParagraph.innerHTML = `Atsakymas:  ${result.toFixed(2)} C°`
     } else {
         resultParagraph.innerHTML = 'Atsakymas: klaida, patikrinkite sąlygas.'
     }
