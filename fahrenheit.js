@@ -8,6 +8,8 @@ function getElementValue(id) {
 
 
 
+
+
 function convert() {
     const celsius = getElementValue("first")
     const fahrenheit = getElementValue("second")
@@ -21,6 +23,8 @@ function convert() {
         calculatedResult()
     }
 }
+
+console.log(getNumberValueById, "first")
 
 function calculatedResult(result) {
     const celsius = getElementValue("first")
