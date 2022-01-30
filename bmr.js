@@ -6,23 +6,26 @@ function checkIfHasInput(id) {
 
 
 function countCal() {
-    const hasFirstInput = checkIfHasInput("first");
-    const hasSecondInput = checkIfHasInput("second");
-    const hasThirdInput = checkIfHasInput("third");
+    const hasFirstInput = checkIfHasInput("firstLeft");
+    const hasSecondInput = checkIfHasInput("secondLeft");
+    const hasThirdInput = checkIfHasInput("thirdLeft");
     // console.log("hasFirstInput", hasFirstInput);
     // console.log("hasSecondInput", hasSecondInput);
     // console.log("hasThirdInput", hasThirdInput);
     const hasNoInput = hasFirstInput && hasSecondInput && hasThirdInput;
     // console.log(hasNoInput)
     if (!hasNoInput) {
-        alert("įrašykite visas vertes!")
+        // alert("įrašykite visas vertes!")
+        // return
+        const mistake = document.getElementById("mistakeLeft");
+        mistake.innerHTML = "Klaida, įrašykite visas vertes!"
         return
     }
-    const firstValue = getValueFromInput("first")
+    const firstValue = getValueFromInput("firstLeft")
         // console.log(firstValue)
-    const secondValue = getValueFromInput("second")
+    const secondValue = getValueFromInput("secondLeft")
         // console.log(secondValue)
-    const thirdValue = getValueFromInput("third")
+    const thirdValue = getValueFromInput("thirdLeft")
         // console.log(thirdValue)
     const getCal = 1.2 * ((10 * firstValue + 6.25 * secondValue - 5 * thirdValue + 5))
     writeResult(getCal)
@@ -40,17 +43,19 @@ function getValueFromInput(id) {
 
 
 function writeResult(result) {
-    const resultParagraph = document.getElementById("result")
+    const resultParagraph = document.getElementById("resultLeft")
     resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
 }
 
 function deleteValues() {
-    const clearInput1 = document.getElementById("first");
-    const clearInput2 = document.getElementById("second");
-    const clearInput3 = document.getElementById("third");
-    const clearP = document.getElementById("result");
+    const clearInput1 = document.getElementById("firstLeft");
+    const clearInput2 = document.getElementById("secondLeft");
+    const clearInput3 = document.getElementById("thirdLeft");
+    const clearData = document.getElementById("result");
+    const clearMistake = document.getElementById("mistake");
     clearInput1.value = ""
     clearInput2.value = ""
     clearInput3.value = ""
-    clearP.innerHTML = ""
+    clearData.innerHTML = ""
+    clearMistake.innerHTML = ""
 }
