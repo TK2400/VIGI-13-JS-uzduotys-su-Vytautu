@@ -9,52 +9,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="bmr.css">
-    <script src="bmr.js" defer></script>
+    <script src="bmrLeft.js" defer></script>
+    <script src="bmrRight.js" defer></script>
 </head>
 
 <body>
 
     <main class="container">
         <div class="row">
-            <div class="col-xl-6 d-block col-lg-6 col-sm-12 left-side">
+            <div class="col-xl-6 d-block col-lg-6 col-sm-12 left-side mb-4">
+                <h4 style="color: rgb(7, 7, 121);">BMR (dienos kalorijų poreikio) <br> kalkuliacija moterims</h4>
                 <form>
-                    <div class="form-group">
+                    <div class="form-group my-4">
                         <label for="firstLeft">Įveskite savo svorį, KG</label>
                         <input type="number" class="form-control" id="firstLeft" aria-describedby="Help1" placeholder="svoris, KG">
-                        <small id="Help1" class="form-text text-muted">Jūsų privatūs duomenys liks saugūs, būkie ramūs.</small>
+                        <small id="Help1" class="form-text text-muted pt-3">Jūsų privatūs duomenys liks saugūs, būkite ramūs.</small>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group my-4">
                         <label for="secondLeft">Įveskite savo ūgį, CM</label>
                         <input type="number" class="form-control" id="secondLeft" placeholder="ūgis, cm">
                     </div>
-                    <div class="form-group">
-                        <label for="thirdLeft">Įveskite savo amžių, Metai</label>
+                    <div class="form-group my-4">
+                        <label for="thirdLeft">Įveskite savo amžių, METAI</label>
                         <input type="number" class="form-control" id="thirdLeft" placeholder="amžius, METAI">
                     </div>
-
-
-                    <button onclick="countCal()">Suskaičiuoti KCAL poreikį dienai</button>
-                    <button onclick="deleteValues()"> Ištrinti reikšmes</button>
-
-                    <!-- <input id="firstleft" type="number" placeholder="svoris, KG">
-                    <input id="secondleft" type="number" placeholder="ūgis, CM">
-                    <input id="thirdleft" type="number" placeholder="amžius, METAI"> -->
-                    <!-- <button onclick="countCal()"> Suskaiciuoti KCAL per dieną</button>
-                    <button onclick="deleteValues()"> Ištrinti reikšmes</button> -->
                 </form>
-            </div>
-            <p id="mistakeLeft"></p>
-            <p id="resultLeft"></p>
-            <!-- <div class="col-xl-6 d-block col-lg-6 col-sm-12 right-side">
-                <input id="firstRight" type="number" placeholder="svoris, KG">
-                <input id="secondRight" type="number" placeholder="ūgis, CM">
-                <input id="thirdRight" type="number" placeholder="amžius, METAI">
-                <button onclick="countCal()"> Suskaiciuoti KCAL per dieną</button>
-                <button onclick="deleteValues()"> Ištrinti reikšmes</button>
-                <p id="mistakeRight"></p>
-                <p id="resultRight"></p>
-            </div> -->
 
+                <button onclick="countCalLeft()" class="btn btn-outline-secondary mx-2 my-2">Suskaičiuoti KCAL poreikį dienai</button>
+                <button onclick="deleteValuesLeft()" class="btn btn-outline-secondary mx-2 my-2"> Ištrinti reikšmes</button>
+
+                <p id="mistakeLeft" class="my-2"></p>
+                <p id="resultLeft" class="my-2"></p>
+            </div>
+
+            <div class="col-xl-6 d-block col-lg-6 col-sm-12 right-side mb-4">
+                <h4 style="color: rgb(7, 7, 121);">BMR (dienos kalorijų poreikio) <br> kalkuliacija vyrams</h4>
+                <form>
+                    <div class="form my-4">
+                        <label for="firstRight">Įveskite savo svorį, KG</label>
+                        <input type="number" class="form-control" id="firstRight" aria-describedby="Help1" placeholder="svoris, KG">
+                        <small id="Help1" class="form-text text-muted pt-3">Jūsų privatūs duomenys liks saugūs, būkite ramūs.</small>
+                    </div>
+                    <div class="form my-4">
+                        <label for="secondRight">Įveskite savo ūgį, CM</label>
+                        <input type="number" class="form-control" id="secondRight" placeholder="ūgis, cm">
+                    </div>
+                    <div class="form my-4">
+                        <label for="thirdRight">Įveskite savo amžių, METAI</label>
+                        <input type="number" class="form-control" id="thirdRight" placeholder="amžius, METAI">
+                    </div>
+                </form>
+                <button onclick="countCalRight()" class="btn btn-outline-secondary mx-2 my-2">Suskaičiuoti KCAL poreikį dienai</button>
+                <button onclick="deleteValuesRight()" class="btn btn-outline-secondary mx-2 my-2"> Ištrinti reikšmes</button>
+
+                <p id="mistakeRight" class="my-2"></p>
+                <p id="resultRight" class="my-2"></p>
+            </div>
 
 
         </div>

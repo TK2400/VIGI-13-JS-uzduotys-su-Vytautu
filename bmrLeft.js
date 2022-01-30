@@ -5,7 +5,7 @@ function checkIfHasInput(id) {
 }
 
 
-function countCal() {
+function countCalLeft() {
     const hasFirstInput = checkIfHasInput("firstLeft");
     const hasSecondInput = checkIfHasInput("secondLeft");
     const hasThirdInput = checkIfHasInput("thirdLeft");
@@ -21,14 +21,15 @@ function countCal() {
         mistake.innerHTML = "Klaida, įrašykite visas vertes!"
         return
     }
+
     const firstValue = getValueFromInput("firstLeft")
         // console.log(firstValue)
     const secondValue = getValueFromInput("secondLeft")
         // console.log(secondValue)
     const thirdValue = getValueFromInput("thirdLeft")
         // console.log(thirdValue)
-    const getCal = 1.2 * ((10 * firstValue + 6.25 * secondValue - 5 * thirdValue + 5))
-    writeResult(getCal)
+    const getCal = 1.2 * ((10 * firstValue + 6.25 * secondValue - 5 * thirdValue - 161))
+    writeResultLeft(getCal)
 }
 
 function getValueFromInput(id) {
@@ -42,17 +43,17 @@ function getValueFromInput(id) {
 }
 
 
-function writeResult(result) {
+function writeResultLeft(result) {
     const resultParagraph = document.getElementById("resultLeft")
     resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
 }
 
-function deleteValues() {
+function deleteValuesLeft() {
     const clearInput1 = document.getElementById("firstLeft");
     const clearInput2 = document.getElementById("secondLeft");
     const clearInput3 = document.getElementById("thirdLeft");
-    const clearData = document.getElementById("result");
-    const clearMistake = document.getElementById("mistake");
+    const clearData = document.getElementById("resultLeft");
+    const clearMistake = document.getElementById("mistakeLeft");
     clearInput1.value = ""
     clearInput2.value = ""
     clearInput3.value = ""
