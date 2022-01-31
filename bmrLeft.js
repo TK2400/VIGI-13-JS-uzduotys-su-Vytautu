@@ -34,29 +34,27 @@ function countCal(firstId, secondId, thirdId) {
             const resultParagraph = document.getElementById('mistakeMale')
             resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
         }
-
-
-
         return
     }
 
 
     const firstValue = getValueFromInput(firstId)
-    console.log(firstValue)
+        // console.log(firstValue)
 
     const secondValue = getValueFromInput(secondId)
-    console.log(secondValue)
+        // console.log(secondValue)
     const thirdValue = getValueFromInput(thirdId)
-    console.log(thirdValue)
+        // console.log(thirdValue)
 
-    const getCal = 1.2 * ((10 * firstValue + 6.25 * secondValue - 5 * thirdValue - 161))
+    const result = (10 * firstValue + 6.25 * secondValue - 5 * thirdValue)
         // writeResult(getCal)
 
     if (firstId === 'firstFemale') {
-
+        const getCal = (result - 161) * 1.2
         const resultParagraph = document.getElementById('resultFemale')
         resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
     } else {
+        const getCal = (result + 5) * 1.2
         const resultParagraph = document.getElementById('resultMale')
         resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
     }
