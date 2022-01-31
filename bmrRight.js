@@ -1,4 +1,4 @@
-function checkIfHasInput(id) {
+/*function checkIfHasInput(id) {
     const element = document.getElementById(id);
     const hasElementValue = Boolean(element.value);
     return hasElementValue;
@@ -58,4 +58,4 @@ function deleteValuesRight() {
     clearInput3.value = ""
     clearData.innerHTML = ""
     clearMistake.innerHTML = ""
-}
+} */

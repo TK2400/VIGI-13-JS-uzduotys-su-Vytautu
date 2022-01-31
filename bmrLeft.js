@@ -4,33 +4,65 @@ function checkIfHasInput(id) {
     return hasElementValue;
 }
 
+// console.log(checkIfHasInput('firstFemale'))
+// console.log(checkIfHasInput('secondFemale'))
+// console.log(checkIfHasInput('thirdFemale'))
+// console.log(checkIfHasInput('firstMale'))
+// console.log(checkIfHasInput('secondMale'))
+// console.log(checkIfHasInput('thirdMale'))
 
-function countCalLeft() {
-    const hasFirstInput = checkIfHasInput("firstLeft");
-    const hasSecondInput = checkIfHasInput("secondLeft");
-    const hasThirdInput = checkIfHasInput("thirdLeft");
+// function countMale() {}
+
+// function countFemale() {
+
+// }
+
+function countCal(firstId, secondId, thirdId) {
+    const hasFirstInput = checkIfHasInput(firstId);
+    const hasSecondInput = checkIfHasInput(secondId);
+    const hasThirdInput = checkIfHasInput(thirdId);
     // console.log("hasFirstInput", hasFirstInput);
     // console.log("hasSecondInput", hasSecondInput);
     // console.log("hasThirdInput", hasThirdInput);
     const hasNoInput = hasFirstInput && hasSecondInput && hasThirdInput;
     // console.log(hasNoInput)
     if (!hasNoInput) {
-        // alert("įrašykite visas vertes!")
-        // return
-        const mistake = document.getElementById("mistakeLeft");
-        mistake.innerHTML = "Klaida, įrašykite visas vertes!"
+        if (firstId === 'firstFemale') {
+            const resultParagraph = document.getElementById('mistakeFemale')
+            resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
+        } else {
+            const resultParagraph = document.getElementById('mistakeMale')
+            resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
+        }
+
+
+
         return
     }
 
-    const firstValue = getValueFromInput("firstLeft")
-        // console.log(firstValue)
-    const secondValue = getValueFromInput("secondLeft")
-        // console.log(secondValue)
-    const thirdValue = getValueFromInput("thirdLeft")
-        // console.log(thirdValue)
+
+    const firstValue = getValueFromInput(firstId)
+    console.log(firstValue)
+
+    const secondValue = getValueFromInput(secondId)
+    console.log(secondValue)
+    const thirdValue = getValueFromInput(thirdId)
+    console.log(thirdValue)
+
     const getCal = 1.2 * ((10 * firstValue + 6.25 * secondValue - 5 * thirdValue - 161))
-    writeResultLeft(getCal)
+        // writeResult(getCal)
+
+    if (firstId === 'firstFemale') {
+
+        const resultParagraph = document.getElementById('resultFemale')
+        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
+    } else {
+        const resultParagraph = document.getElementById('resultMale')
+        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
+    }
 }
+
+
 
 function getValueFromInput(id) {
     const element = document.getElementById(id)
@@ -43,12 +75,15 @@ function getValueFromInput(id) {
 }
 
 
-function writeResultLeft(result) {
-    const resultParagraph = document.getElementById("resultLeft")
-    resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
-}
 
-function deleteValuesLeft() {
+
+// function writeResult(result) {
+//     const resultParagraph = document.getElementById('resultMale')
+//     resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
+// }
+
+
+/*function deleteValuesLeft() {
     const clearInput1 = document.getElementById("firstLeft");
     const clearInput2 = document.getElementById("secondLeft");
     const clearInput3 = document.getElementById("thirdLeft");
@@ -59,4 +94,4 @@ function deleteValuesLeft() {
     clearInput3.value = ""
     clearData.innerHTML = ""
     clearMistake.innerHTML = ""
-}
+}*/
