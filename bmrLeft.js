@@ -11,12 +11,6 @@ function checkIfHasInput(id) {
 // console.log(checkIfHasInput('secondMale'))
 // console.log(checkIfHasInput('thirdMale'))
 
-// function countMale() {}
-
-// function countFemale() {
-
-// }
-
 function countCal(firstId, secondId, thirdId) {
     const hasFirstInput = checkIfHasInput(firstId);
     const hasSecondInput = checkIfHasInput(secondId);
@@ -28,39 +22,31 @@ function countCal(firstId, secondId, thirdId) {
     // console.log(hasNoInput)
     if (!hasNoInput) {
         if (firstId === 'firstFemale') {
-            const resultParagraph = document.getElementById('mistakeFemale')
-            resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
+            const resultParagraph = document.getElementById('mistakeFemale').innerHTML = "Klaida, įrašykite visas vertes!"
+                // resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
         } else {
-            const resultParagraph = document.getElementById('mistakeMale')
-            resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
+            const resultParagraph = document.getElementById('mistakeMale').innerHTML = "Klaida, įrašykite visas vertes!"
+                // resultParagraph.innerHTML = "Klaida, įrašykite visas vertes!"
         }
         return
     }
-
-
     const firstValue = getValueFromInput(firstId)
         // console.log(firstValue)
-
     const secondValue = getValueFromInput(secondId)
         // console.log(secondValue)
     const thirdValue = getValueFromInput(thirdId)
         // console.log(thirdValue)
-
-    const result = (10 * firstValue + 6.25 * secondValue - 5 * thirdValue)
-        // writeResult(getCal)
-
+    const getCal = (10 * firstValue + 6.25 * secondValue - 5 * thirdValue)
     if (firstId === 'firstFemale') {
-        const getCal = (result - 161) * 1.2
+        const result = (getCal - 161) * 1.2
         const resultParagraph = document.getElementById('resultFemale')
-        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
+        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
     } else {
-        const getCal = (result + 5) * 1.2
+        const result = (getCal + 5) * 1.2
         const resultParagraph = document.getElementById('resultMale')
-        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + getCal
+        resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
     }
 }
-
-
 
 function getValueFromInput(id) {
     const element = document.getElementById(id)
@@ -69,27 +55,57 @@ function getValueFromInput(id) {
         // console.log(typeof valueAsNumber)
         // console.log(typeof value)
     return value
-
 }
 
+function deleteValues() {
+    document.getElementById('firstFemale').value = "";
+    document.getElementById('secondFemale').value = "";
+    document.getElementById('thirdFemale').value = "";
+    document.getElementById('mistakeFemale').innerHTML = "";
+    document.getElementById('resultFemale').innerHTML = "";
+    document.getElementById('firstMale').value = "";
+    document.getElementById('secondMale').value = "";
+    document.getElementById('thirdMale').value = "";
+    document.getElementById('mistakeMale').innerHTML = "";
+    document.getElementById('resultMale').innerHTML = "";
+}
+
+// NEVEIKIA PILNAI, be if firstid - female - veiia, bet tik vienoje puseje
+//function deleteValues() {
+//     if (firstId === 'firstFemale') {
+//         document.querySelectorAll(".to-clear").forEach(element => {
+//             if ("value" in element) {
+//                 element.value = ""
+//             } else {
+//                 element.innerHTML = ""
+//             }
+//         });
+//     } else {
+//         document.querySelectorAll(".to-clear").forEach(element => {
+//             if ("value" in element) {
+//                 element.value = ""
+//             } else {
+//                 element.innerHTML = ""
+//             }
+//         });
+//     }
 
 
 
-// function writeResult(result) {
-//     const resultParagraph = document.getElementById('resultMale')
-//     resultParagraph.innerHTML = "Kalorijų poreikis dirbant sėdimą darbą: " + result
+
+
+
+
+
+
+// } else if (firstId === 'firstMale') {
+//     document.querySelectorAll(".to-clear").forEach(element => {
+//         if ("value" in element) {
+//             element.value = ""
+//         } else {
+//             element.innerHTML = ""
+//         }
+//     });
+// } else {
+//     return
 // }
-
-
-/*function deleteValuesLeft() {
-    const clearInput1 = document.getElementById("firstLeft");
-    const clearInput2 = document.getElementById("secondLeft");
-    const clearInput3 = document.getElementById("thirdLeft");
-    const clearData = document.getElementById("resultLeft");
-    const clearMistake = document.getElementById("mistakeLeft");
-    clearInput1.value = ""
-    clearInput2.value = ""
-    clearInput3.value = ""
-    clearData.innerHTML = ""
-    clearMistake.innerHTML = ""
-}*/
