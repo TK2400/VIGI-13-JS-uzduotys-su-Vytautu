@@ -31,16 +31,16 @@ let numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, -4, 6];
 // 11. Parašykite funkciją filteredByLetter, kuri turi du parametrus: 1. masyvas; 2. raidė. Funkcija sukuria ir grąžina naują masyvą, kuriame yra visi masyvo, nurodyto kaip pirmas parametras elemntai, kuriuose galima rasti antru paramatetru nurodytą raidę.
 // Testuosime šį masyvą
 let citiesOfLithuania = [
-  'Vilnius',
-  'Kaunas',
-  'Klaipėda',
-  'Šiauliai',
-  'Panevėžys',
-  'Alytus',
-  'Marijampolė',
-  'Mažeikiai',
-  'Jonava',
-  'Utena',
+    'Vilnius',
+    'Kaunas',
+    'Klaipėda',
+    'Šiauliai',
+    'Panevėžys',
+    'Alytus',
+    'Marijampolė',
+    'Mažeikiai',
+    'Jonava',
+    'Utena',
 ];
 
 // 12. Parašykite penkias funkcijas:
